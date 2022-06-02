@@ -37,7 +37,7 @@ public class PublisherController {
         return "Sent product with redis!";
     }
 
-    @PostMapping("/customer/{id}/publish/redisson")
+    @PostMapping("/customer/{id}/publish")
     public String publishWithRedisson(@PathVariable Long id) throws JsonProcessingException {
         Customer customer = customerService.getById(id);
         RTopic topic = redissonClient.getTopic(customerTopic);

@@ -71,7 +71,7 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> findByName(String name) {
         log.info("Repository is retrieving product by name {}", name);
         sleep(1);
-        return productRepository.findByName(name);
+        return productRepository.findByNameIgnoreCase(name);
     }
 
     @Override

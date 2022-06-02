@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Integer> {
-    List<Product> findByName(String name);
+    List<Product> findByNameIgnoreCase(String name);
 }
