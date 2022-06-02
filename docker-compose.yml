@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  database_redis:
+    container_name: database_redis_instance
+    image: redis/redis-stack:latest
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+  cache_redis_instance:
+    container_name: cache_redis_instance
+    image: redis/redis-stack:latest
+    restart: unless-stopped
+    ports:
+      - "8086:6379"
+  2nd_level_cache_instance:
+    container_name: 2nd_level_cache_instance
+    image: redis/redis-stack:latest
+    restart: unless-stopped
+    ports:
+      - "8087:6379"

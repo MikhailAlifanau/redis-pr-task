@@ -1,0 +1,27 @@
+spring:
+  #Database redis
+  redis:
+    host: localhost
+    port: 6379
+  datasource:
+    url: jdbc:h2:mem:redistask
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+      cache.use_second_level_cache: true
+      cache.region.factory_class: org.redisson.hibernate.RedissonRegionFactory
+      cache.redisson.config: /redisson-2nd-level-cache.yaml
+    properties:
+      hibernate:
+        format_sql: true
+
+product:
+  queue:
+    name: "product-queue"
+customer:
+  queue:
+    name: "customer-queue"
