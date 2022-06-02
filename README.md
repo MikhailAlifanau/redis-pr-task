@@ -20,3 +20,9 @@ Customers can be published with redisson Rtopics.
 Data prerequisites:
 1. There are 3 customers pre-created as per data.sql file
 2. There are no products pre-created, so at least one should be inserted via API.
+
+Application uses 3 separate redis instances for caching, 
+DB and 2nd layer cache. Instances can be started
+via docker compose in the project. 
+Ports for redis deployment in docker can be changed,
+if provided ports in current config are occupied. 
